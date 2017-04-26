@@ -35,6 +35,12 @@
 			<layout>p2</layout>
 		</repository>
 
+		<!-- https://issues.jboss.org/browse/JBIDE-24298 -->
+		<repository>
+			<id>tychoM2E</id>
+			<layout>p2</layout>
+			<url>http://download.jboss.org/jbosstools/updates/requirements/m2eclipse-tycho/0.9.0.201609061714/</url>
+		</repository>
 	</repositories>
 
 	<build>
@@ -249,6 +255,7 @@
 	<modules>
 		<module>plugins</module>
 		<module>tests</module>
+		<module>uitests</module>
 		<module>features</module>
 		<module>site</module>
 	</modules>
