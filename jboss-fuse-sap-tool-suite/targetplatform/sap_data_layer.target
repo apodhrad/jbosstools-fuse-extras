@@ -7,11 +7,11 @@
 <repository location="http://fuse-sap.mw.lab.eng.bos.redhat.com/repositories/fuse-sap-data-layer/updatesite/6.3.0.redhat-187/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.fusesource.ide.camel.editor.feature.feature.group" version="10.0.0.v20170712-1652"/>
-<unit id="org.jboss.tools.fuse.transformation.feature.feature.group" version="10.0.0.v20170712-1652"/>
-<unit id="org.fusesource.ide.server.extensions.feature.feature.group" version="10.0.0.v20170712-1652"/>
-<unit id="org.fusesource.ide.jmx.feature.feature.group" version="10.0.0.v20170712-1652"/>
-<repository location="http://download.jboss.org/jbosstools/oxygen/staging/updates/"/>
+<unit id="org.fusesource.ide.camel.editor.feature.feature.group" version="10.0.0.v20170728-0625"/>
+<unit id="org.jboss.tools.fuse.transformation.feature.feature.group" version="10.0.0.v20170724-0737"/>
+<unit id="org.fusesource.ide.server.extensions.feature.feature.group" version="10.0.0.v20170728-0625"/>
+<unit id="org.fusesource.ide.jmx.feature.feature.group" version="10.0.0.v20170728-0625"/>
+<repository location="http://tooling.fuse-qe.eng.rdu2.redhat.com/p2/download.jboss.org/jbosstools/oxygen/staging/updates/core/4.5.0.Final-0"/>
 </location>
 </locations>
 </target>
