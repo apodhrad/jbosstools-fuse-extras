@@ -23,5 +23,12 @@
 <unit id="org.eclipse.reddeer.graphiti.feature.source.feature.group"/>
 <repository location="http://download.eclipse.org/reddeer/snapshots/"/>
 </location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.jboss.tools.fuse.qe.reddeer"/>
+<unit id="org.jboss.tools.fuse.qe.reddeer.source"/>
+<unit id="org.jboss.tools.fuse.qe.reddeer.tests"/>
+<unit id="org.jboss.tools.fuse.qe.reddeer.tests.source"/>
+<repository location="http://tooling.fuse-qe.eng.rdu2.redhat.com/p2/custom/fuseide/apodhrad/FUSETOOLS-1768/"/>
+</location>
 </locations>
 </target>
