@@ -8,10 +8,20 @@
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.fusesource.ide.camel.editor.feature.feature.group" version="10.0.0.v20170728-0625"/>
+<unit id="org.fusesource.ide.core.feature.feature.group" version="10.0.0.v20170731-1235"/>
 <unit id="org.jboss.tools.fuse.transformation.feature.feature.group" version="10.0.0.v20170724-0737"/>
 <unit id="org.fusesource.ide.server.extensions.feature.feature.group" version="10.0.0.v20170728-0625"/>
 <unit id="org.fusesource.ide.jmx.feature.feature.group" version="10.0.0.v20170728-0625"/>
 <repository location="http://tooling.fuse-qe.eng.rdu2.redhat.com/p2/download.jboss.org/jbosstools/oxygen/staging/updates/core/4.5.0.Final-0"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.reddeer.swt.feature.feature.group"/>
+<unit id="org.eclipse.reddeer.swt.feature.source.feature.group"/>
+<unit id="org.eclipse.reddeer.eclipse.feature.feature.group"/>
+<unit id="org.eclipse.reddeer.eclipse.feature.source.feature.group"/>
+<unit id="org.eclipse.reddeer.graphiti.feature.feature.group"/>
+<unit id="org.eclipse.reddeer.graphiti.feature.source.feature.group"/>
+<repository location="http://download.eclipse.org/reddeer/snapshots/"/>
 </location>
 </locations>
 </target>
