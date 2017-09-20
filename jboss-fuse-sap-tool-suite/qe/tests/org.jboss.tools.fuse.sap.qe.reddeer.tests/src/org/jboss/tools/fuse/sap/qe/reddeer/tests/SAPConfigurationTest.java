@@ -23,6 +23,7 @@ import org.eclipse.reddeer.junit.internal.runner.ParameterizedRequirementsRunner
 import org.eclipse.reddeer.junit.requirement.inject.InjectRequirement;
 import org.eclipse.reddeer.junit.runner.RedDeerSuite;
 import org.eclipse.reddeer.requirements.cleanworkspace.CleanWorkspaceRequirement;
+import org.eclipse.reddeer.swt.api.Text;
 import org.eclipse.reddeer.workbench.impl.shell.WorkbenchShell;
 import org.jboss.tools.fuse.qe.reddeer.ProjectType;
 import org.jboss.tools.fuse.qe.reddeer.XPathEvaluator;
@@ -37,6 +38,7 @@ import org.jboss.tools.fuse.sap.qe.reddeer.requirement.SAPRequirement.SAP;
 import org.jboss.tools.fuse.sap.qe.reddeer.requirement.SAPServer;
 import org.jboss.tools.fuse.sap.qe.reddeer.tests.utils.ProjectFactory;
 import org.jboss.tools.fuse.sap.qe.reddeer.wizard.SAPConfigurationWizard;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -222,6 +224,11 @@ public class SAPConfigurationTest {
 		assertXPath("", serverQuery(serverName2) + "/@class");
 	}
 
+	public static void setText(Text widget, String text) {
+		widget.setText(text);
+		Assert.assertEquals(text, widget.getText());
+	}
+	
 	/**
 	 * <p>
 	 * Tests all properties of SAP destination in Configurations editor.
@@ -245,12 +252,12 @@ public class SAPConfigurationTest {
 
 		/* Basic */
 		wizard.selectTab("Basic");
-		wizard.getSAPApplicationServerTXT().setText("sap.example.com");
-		wizard.getSAPSystemNumberTXT().setText("12");
-		wizard.getSAPClientTXT().setText("123");
-		wizard.getLogonUserTXT().setText("admin");
-		wizard.getLogonPasswordTXT().setText("admin123$");
-		wizard.getLogonLanguageTXT().setText("xy");
+		setText(wizard.getSAPApplicationServerTXT(),"sap.example.com");
+		setText(wizard.getSAPSystemNumberTXT(),"12");
+		setText(wizard.getSAPClientTXT(),"123");
+		setText(wizard.getLogonUserTXT(),"admin");
+		setText(wizard.getLogonPasswordTXT(),"admin123$");
+		setText(wizard.getLogonLanguageTXT(),"xy");
 
 		/* Connection */
 		wizard.selectTab("Connection");
@@ -386,20 +393,20 @@ public class SAPConfigurationTest {
 
 		/* Mandatory */
 		wizard.selectTab("Mandatory");
-		wizard.getGatewayHostTXT().setText("host.example.com");
-		wizard.getGatewayPortTXT().setText("3333");
-		wizard.getProgramIDTXT().setText("FOO");
-		wizard.getRepositoryDestinationTXT().setText("myDest");
-		wizard.getConnectionCountTXT().setText("3");
+		setText(wizard.getGatewayHostTXT(), "host.example.com");
+		setText(wizard.getGatewayPortTXT(), "3333");
+		setText(wizard.getProgramIDTXT(), "FOO");
+		setText(wizard.getRepositoryDestinationTXT(), "myDest");
+		setText(wizard.getConnectionCountTXT(), "3");
 
 		/* Optional */
 		wizard.selectTab("Optional");
 		wizard.getEnableRFCTraceCHB().toggle(true);
-		wizard.getSAPRouterStringTXT().setText("/H/abc/S/321/W/xyz");
-		wizard.getWorkerThreadCountTXT().setText("10");
-		wizard.getMinimumWorkerThreadCountTXT().setText("11");
-		wizard.getMaximumStartupDelayTXT().setText("12");
-		wizard.getRepositoryMapTXT().setText("map");
+		setText(wizard.getSAPRouterStringTXT(), "/H/abc/S/321/W/xyz");
+		setText(wizard.getWorkerThreadCountTXT(), "10");
+		setText(wizard.getMinimumWorkerThreadCountTXT(), "11");
+		setText(wizard.getMaximumStartupDelayTXT(), "12");
+		setText(wizard.getRepositoryMapTXT(), "map");
 
 		/* SNC */
 		wizard.selectTab("SNC");
@@ -457,11 +464,11 @@ public class SAPConfigurationTest {
 		wizard.selectDestination(destination.getName());
 		wizard.selectTab("Connection");
 		wizard.selectTab("Basic");
-		wizard.getSAPApplicationServerTXT().setText(destination.getAshost());
-		wizard.getSAPSystemNumberTXT().setText(destination.getSysnr());
-		wizard.getSAPClientTXT().setText(destination.getClient());
-		wizard.getLogonUserTXT().setText(destination.getUser());
-		wizard.getLogonPasswordTXT().setText(destination.getPassword());
+		setText(wizard.getSAPApplicationServerTXT(),destination.getAshost());
+		setText(wizard.getSAPSystemNumberTXT(),destination.getSysnr());
+		setText(wizard.getSAPClientTXT(),destination.getClient());
+		setText(wizard.getLogonUserTXT(),destination.getUser());
+		setText(wizard.getLogonPasswordTXT(),destination.getPassword());
 
 		SAPTestDestinationDialog destinationDialog = wizard.openDestinationTestDialog(destination.getName());
 		String expected = "Connection test for destination '" + destination.getName() + "' succeeded.";
@@ -470,11 +477,11 @@ public class SAPConfigurationTest {
 
 		wizard.addServer(server.getName());
 		wizard.selectServer(server.getName());
-		wizard.getGatewayHostTXT().setText(server.getGwhost());
-		wizard.getGatewayPortTXT().setText(server.getGwport());
-		wizard.getProgramIDTXT().setText(server.getProgid());
-		wizard.getRepositoryDestinationTXT().setText(server.getDestination());
-		wizard.getConnectionCountTXT().setText(server.getConnectionCount());
+		setText(wizard.getGatewayHostTXT(),server.getGwhost());
+		setText(wizard.getGatewayPortTXT(),server.getGwport());
+		setText(wizard.getProgramIDTXT(),server.getProgid());
+		setText(wizard.getRepositoryDestinationTXT(),server.getDestination());
+		setText(wizard.getConnectionCountTXT(),server.getConnectionCount());
 
 		SAPTestServerDialog serverDialog = wizard.openServerTestDialog(server.getName());
 		expected = "Connection test for destination '" + destination.getName() + "' succeeded.";
