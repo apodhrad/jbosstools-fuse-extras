@@ -28,7 +28,7 @@
 				<configuration>
 					<appArgLine>-eclipse.password resources/security/password -pluginCustomization ${customization.file} -clean</appArgLine>
 					<testSuite>org.jboss.tools.fuse.sap.qe.reddeer.tests</testSuite>
-					<testClass>**/*Test</testClass>
+					<testClass>**/SmokeTests</testClass>
 					<useUIThread>false</useUIThread>
 					<skip>${skipUITests}</skip>
 					<dependencies combine.children="append">
